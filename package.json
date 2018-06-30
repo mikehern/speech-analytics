@@ -1,0 +1,11 @@
+{
+  "name": "speech-analytics",
+  "version": "1.0.0",
+  "description": "Voice-powered analytics",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mike Hernandez",
+  "license": "ISC"
+}

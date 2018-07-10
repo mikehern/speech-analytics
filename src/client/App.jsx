@@ -17,7 +17,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
+      <React.Fragment>
         <div className="header">
           <h5>Header</h5>
           {this.state.username ? (
@@ -26,24 +26,28 @@ class App extends Component {
             <h1>Loading.. please wait!</h1>
           )}
         </div>
-        <div className="sidebar">
-          <h5>Sidebar</h5>
-          {/* <div className="test-row"> number 1 </div>
-          <div className="test-row"> number 1 </div>
-          <div className="test-row"> number 1 </div>
-          <div className="test-row"> number 1 </div>
-          <div className="test-row"> number 1 </div>
-          <div className="test-row"> number 1 </div>
-          <div className="test-row"> number 1 </div> */}
+        <div className="container">
+          <div className="sidebar">
+            <h5>Sidebar</h5>
+            <div className="test-row"> number 1 </div>
+            <div className="test-row"> number 1 </div>
+            <div className="test-row"> number 1 </div>
+            <div className="test-row"> number 1 </div>
+            <div className="test-row"> number 1 </div>
+            <div className="test-row"> number 1 </div>
+            <div className="test-row"> number 1 </div>
+          </div>
+          <div className="content">
+            <h5>Content</h5>
+          </div>
         </div>
-        <div className="content">
-          <h5>Content</h5>
-        </div>
-        <div className="footer">
-          <h5>Footer</h5>
-          ✌🏼 mikehern
-        </div>
-      </div>
+        <footer>
+          <div className="footer">
+            <h5>Footer</h5>
+            ✌🏼 mikehern
+          </div>
+        </footer>
+      </React.Fragment>
     );
   }
 }

@@ -13,5 +13,5 @@ app.get('/api/getUserName', (req, res) => {
 stocks.getSummaryData(`^DJI`);
 
 
-const PORT = 8080;
+const PORT = 3000;
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));

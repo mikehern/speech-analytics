@@ -28,6 +28,13 @@ class App extends Component {
         </div>
         <div className="sidebar">
           <h5>Sidebar</h5>
+          {/* <div className="test-row"> number 1 </div>
+          <div className="test-row"> number 1 </div>
+          <div className="test-row"> number 1 </div>
+          <div className="test-row"> number 1 </div>
+          <div className="test-row"> number 1 </div>
+          <div className="test-row"> number 1 </div>
+          <div className="test-row"> number 1 </div> */}
         </div>
         <div className="content">
           <h5>Content</h5>

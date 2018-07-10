@@ -24,8 +24,10 @@ h5 {
   padding-top: 6vh; }
   @media screen and (max-width: 600px) {
     .container {
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-areas: "h h h" "s s s" "f f f"; } }
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      width: 100%; } }
 
 .header {
   position: fixed;
@@ -39,12 +41,18 @@ h5 {
   background-color: red;
   width: 100%;
   height: 6vh; }
+  @media screen and (max-width: 600px) {
+    .header {
+      height: 9vh; } }
 
 .sidebar {
   grid-area: s;
   background-color: green;
   width: 100%;
   padding-bottom: 12vh; }
+  @media screen and (max-width: 600px) {
+    .sidebar {
+      padding-bottom: 20vh; } }
 
 .content {
   grid-area: c;
@@ -66,6 +74,10 @@ footer {
   background-color: tomato;
   width: 60%;
   height: 12vh; }
+  @media screen and (max-width: 600px) {
+    .footer {
+      width: 100%;
+      height: 20vh; } }
 
 .test-row {
   height: 8em; }

@@ -5,7 +5,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: null
+      username: null,
+      stocks: []
     };
   }
 
@@ -13,6 +14,10 @@ class App extends Component {
     fetch('/api/getusername')
       .then(res => res.json())
       .then(user => this.setState({ username: user.username }));
+
+    fetch('/api/getportfolio')
+      .then(res => res.json())
+      .then(data => this.setState({ stocks: data.portfolio }));
   }
 
   render() {

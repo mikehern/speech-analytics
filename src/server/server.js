@@ -10,7 +10,10 @@ app.get('/api/getUserName', (req, res) => {
   res.send({ username: os.userInfo().username });
 });
 
-stocks.getSummaryData(`^DJI`);
+app.get('/api/getportfolio', async (req, res) => {
+  const results = await stocks.getInitPortfolio();
+  res.send({ portfolio: results });
+});
 
 
 const PORT = 3000;

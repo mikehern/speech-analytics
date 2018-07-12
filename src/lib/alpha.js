@@ -1,8 +1,9 @@
 const config = require('../../config/config');
 const moment = require('moment');
 const alpha = require('alphavantage')({ key: config.ALPHAVANTAGE });
+const promise = require('bluebird');
 
-const initPortfolio = [`^DJI`, `^GSPC`];
+const initPortfolio = [`^GSPC`, `^IXIC`];
 
 //Generalizes key to flexibly handle any time interval
 const timeLabelHelper = (data) => {
@@ -65,6 +66,19 @@ const getSummaryData = async (symbol) => {
   }
 }
 
+const getInitPortfolio = async (portfolio = initPortfolio) => {
+  try {
+    const results = await promise.map(portfolio, (stock) => {
+      return getSummaryData(stock);
+    });
+  
+    return results;
+  } catch (err) {
+    console.error(err);
+  }
+}
+
 module.exports = {
-  getSummaryData
+  getSummaryData,
+  getInitPortfolio
 }

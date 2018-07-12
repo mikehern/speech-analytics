@@ -1,4 +1,9 @@
 $primary-font: 'Poppins', sans-serif;
+$slate: #111111;
+$gray: #8E8B93;
+$cherry: #EB002E;
+$green: #40DB5E;
+$red: #FF3B24;
 
 @mixin phone {
   @media screen and (max-width: 600px) {

@@ -57,7 +57,8 @@ const getSummaryData = async (symbol) => {
     return {
       currentPrice,
       change: netPrice,
-      name: symbolName
+      name: symbolName,
+      symbol
     };
   } catch (err) {
     console.error(err);

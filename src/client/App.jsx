@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Header from './components/header';
 import './styles.css';
 
 class App extends Component {
@@ -23,14 +24,7 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="header">
-          <h5>Header</h5>
-          {this.state.username ? (
-            <h1>Aloha {this.state.username}!</h1>
-          ) : (
-            <h1>Loading.. please wait!</h1>
-          )}
-        </div>
+        <Header />
         <div className="container">
           <div className="sidebar">
             <h5>Sidebar</h5>

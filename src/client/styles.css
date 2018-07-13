@@ -1,3 +1,35 @@
+/* Usage Examples
+    .my-level-1-heading-class {
+        @include text-crop; // Will use default line height of 1.3
+        font-size: 48px;
+        margin: 0 0 0 16px;
+    }
+
+    .my-level-2-heading-class {
+        @include text-crop; // Will use default line height of 1.3
+        font-size: 32px; // Don't need to change any settings, will work with any font size automatically
+        margin: 0 0 0 16px;
+    }
+
+    .my-body-copy-class {
+        @include text-crop($line-height: 2); // Larger line height desired, set the line height via the mixin
+        font-size: 16px;
+    }
+
+    // Sometimes depending on the font-size, the rendering, the browser, etc. you may need to tweak the output. 
+    // You can adjust the top and bottom cropping when invoking the component using the $top-adjustment and $bottom-adjustment settings 
+    
+    .slight-adjustment-needed {
+        @include text-crop($top-adjustment: -0.5px, $bottom-adjustment: 2px);
+        font-size: 17px;
+    }
+
+    .dont-do-this {
+        @include text-crop;
+        font-size: 16px;
+        line-height: 3; // DO NOT set line height outside of the mixin, the mixin needs the line height value to calculate the crop correctly
+    }
+*/
 /* Box-sizing hack to redefine width to include border */
 * {
   -webkit-box-sizing: content-box;
@@ -36,15 +68,40 @@ h5 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background-color: red;
+  background-color: black;
+  color: #8E8B93;
+  font-weight: 700;
   width: 100%;
-  height: 6vh; }
+  height: 6vh;
+  padding: 0 2em;
+  letter-spacing: .05em;
+  line-height: 1.3; }
+  .header::before, .header::after {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0; }
+  .header::before {
+    margin-bottom: calc(-0.3em + 0px); }
+  .header::after {
+    margin-top: calc(-0.27222em + 0px); }
   @media screen and (max-width: 600px) {
     .header {
-      height: 9vh; } }
+      height: 9vh;
+      padding: 0.02em 0.75em; } }
+
+.header-title--color {
+  color: white; }
 
 .sidebar {
   grid-area: s;

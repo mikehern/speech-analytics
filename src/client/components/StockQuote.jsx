@@ -10,7 +10,13 @@ const StockQuote = (props) => {
       <div className="stockquote-sparkline">SPARKLINE HERE</div>
       <div className="stockquote-price">{price}</div>
       <div className="stockquote-change--wrapper">
-        <div className="stockquote-change">{change}</div>
+        <div className=
+          {"stockquote-change " +
+              ((change < 0) ? "stockquote-change--red"
+              : "stockquote-change--green")
+          }>
+          {change}
+        </div>
       </div>
     </div>
   )

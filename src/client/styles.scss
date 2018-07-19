@@ -121,13 +121,20 @@ h5 {
 .stockquote-change {
   grid-area: cha;
   max-width: 6em;
-  background-color: $green;
   color: white;
   border-radius: .25em;
   display: flex;
   justify-content: flex-end;
   padding-right: .25em;
   width: 3.5em;
+}
+
+.stockquote-change--green {
+  background-color: $green;
+}
+
+.stockquote-change--red {
+  background-color: $red;
 }
 
 .content {

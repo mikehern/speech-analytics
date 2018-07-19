@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Header from './components/header';
-import './styles.css';
+import Header from './header';
+import '../styles.css';
 
 class App extends Component {
   constructor(props) {

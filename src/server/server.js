@@ -15,6 +15,7 @@ app.get('/api/getportfolio', async (req, res) => {
   res.send({ portfolio: results });
 });
 
+stocks.getOneDayHistory('goog');
 
 const PORT = 3000;
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));

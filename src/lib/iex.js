@@ -10,11 +10,14 @@ const getStockQuote = async (stock) => {
   try {
     const data = await iex.stockQuote(stock);
     const { latestPrice, change, companyName, symbol } = data;
+
     return {
-      price: latestPrice,
-      change: change,
-      name: companyName,
-      symbol
+      title: companyName,
+      data: {
+        price: latestPrice,
+        change: change,
+        symbol
+      }
     }  
   } catch (error) {
     console.error(error);

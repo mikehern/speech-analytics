@@ -105,16 +105,84 @@ h5 {
 
 .sidebar {
   grid-area: s;
-  background-color: green;
+  background-color: black;
   width: 100%;
   padding-bottom: 12vh; }
   @media screen and (max-width: 600px) {
     .sidebar {
       padding-bottom: 20vh; } }
 
+.stockquote-wrapper {
+  display: grid;
+  padding: 0.75em 2em;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: .5em 1em;
+  border-bottom: 1px solid #333333;
+  grid-template-areas: "sym sym spa pri" "nam nam spa cha"; }
+  @media screen and (max-width: 600px) {
+    .stockquote-wrapper {
+      padding: 0.75em 0.75em; } }
+
+.stockquote-symbol {
+  grid-area: sym;
+  color: white; }
+
+.stockquote-name {
+  grid-area: nam;
+  color: #8E8B93;
+  font-size: .9em; }
+
+.stockquote-sparkline {
+  grid-area: spa;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.stockquote-price {
+  grid-area: pri;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end; }
+
+.stockquote-change--wrapper {
+  grid-area: cha;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end; }
+
+.stockquote-change {
+  grid-area: cha;
+  max-width: 6em;
+  background-color: #45DC5F;
+  color: white;
+  border-radius: .25em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding-right: .25em;
+  width: 3.5em; }
+
 .content {
   grid-area: c;
-  background-color: orange;
+  background-color: black;
   width: 100%;
   height: 100%; }
   @media screen and (max-width: 600px) {

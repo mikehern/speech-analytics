@@ -62,7 +62,7 @@ h5 {
 
 .sidebar {
   grid-area: s;
-  background-color: green;
+  background-color: black;
   width: 100%;
   padding-bottom: 12vh;
 
@@ -71,9 +71,68 @@ h5 {
   }
 }
 
+.stockquote-wrapper {
+  display: grid;
+  padding: .75em $desktopSidePadding;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: .5em 1em;
+  border-bottom: 1px solid $silver;
+  grid-template-areas: 
+    "sym sym spa pri"
+    "nam nam spa cha";
+
+  @include phone {
+    padding: .75em $phoneSidePadding;
+  }
+}
+
+.stockquote-symbol {
+  grid-area: sym;
+  color: white;
+}
+
+.stockquote-name {
+  grid-area: nam;
+  color: $gray;
+  font-size: .9em;
+}
+
+.stockquote-sparkline {
+  grid-area: spa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stockquote-price {
+  grid-area: pri;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.stockquote-change--wrapper {
+  grid-area: cha;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.stockquote-change {
+  grid-area: cha;
+  max-width: 6em;
+  background-color: $green;
+  color: white;
+  border-radius: .25em;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: .25em;
+  width: 3.5em;
+}
+
 .content {
   grid-area: c;
-  background-color: orange;
+  background-color: black;
   width: 100%;
   height: 100%;
   @include phone {

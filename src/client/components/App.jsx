@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
+import StockQuote from './StockQuote';
 import '../styles.css';
 
 class App extends Component {
@@ -22,12 +23,21 @@ class App extends Component {
   }
 
   render() {
+    const quotes = this.state.stocks.map(el => {
+      return (
+        <StockQuote key={el.title}
+          name={el.title}
+          data={el.data}
+        />
+      );
+    });
     return (
       <React.Fragment>
         <Header />
         <div className="container">
           <div className="sidebar">
             <h5>Sidebar</h5>
+            {quotes}
             <div className="test-row"> number 1 </div>
             <div className="test-row"> number 1 </div>
             <div className="test-row"> number 1 </div>

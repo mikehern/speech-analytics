@@ -4,3 +4,4 @@
 
 .eslintrc.json
 prepros-6.config
+/src/client/_variables.css

@@ -54,7 +54,7 @@ h5 {
   -ms-flex-align: center;
   align-items: center;
   width: 100vw;
-  padding-top: 6vh; }
+  padding-top: 8vh; }
   @media screen and (max-width: 600px) {
     .container {
       display: -webkit-box;
@@ -82,7 +82,7 @@ h5 {
   color: #8E8B93;
   font-weight: 700;
   width: 100%;
-  height: 6vh;
+  height: 8vh;
   padding: 0 2em;
   letter-spacing: .05em;
   line-height: 1.3; }

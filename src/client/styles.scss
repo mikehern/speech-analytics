@@ -26,7 +26,7 @@ h5 {
   justify-items: center;
   align-items: center;
   width: 100vw;
-  padding-top: 6vh;
+  padding-top: 8vh;
 
   @include phone {
     display: flex;
@@ -45,7 +45,7 @@ h5 {
   color: $gray;
   font-weight: 700;
   width: 100%;
-  height: 6vh;
+  height: 8vh;
   padding: 0 $desktopSidePadding;
   letter-spacing: .05em;
   @include text-crop;

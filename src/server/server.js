@@ -1,6 +1,6 @@
 const express = require('express');
 const os = require('os');
-const stocks = require('../lib/alpha');
+const stocks = require('../lib/iex');
 const app = express();
 
 app.use(express.static('dist'));

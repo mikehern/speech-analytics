@@ -28,6 +28,7 @@ class App extends Component {
         <StockQuote key={el.title}
           name={el.title}
           data={el.data}
+          history={el.oneDayHistory}
         />
       );
     });

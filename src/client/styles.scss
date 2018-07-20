@@ -84,6 +84,7 @@ h5 {
 
   @include phone {
     padding: .75em $phoneSidePadding;
+    gap: .5em .25em;
   }
 }
 
@@ -99,10 +100,13 @@ h5 {
 }
 
 .stockquote-sparkline {
+  background-color: orange;
   grid-area: spa;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .stockquote-price {
@@ -135,6 +139,16 @@ h5 {
 
 .stockquote-change--red {
   background-color: $red;
+}
+
+.sparkline {
+  background-color: $silver;
+}
+
+.sparkline-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .content {

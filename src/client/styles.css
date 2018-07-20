@@ -122,7 +122,8 @@ h5 {
   grid-template-areas: "sym sym spa pri" "nam nam spa cha"; }
   @media screen and (max-width: 600px) {
     .stockquote-wrapper {
-      padding: 0.75em 0.75em; } }
+      padding: 0.75em 0.75em;
+      gap: .5em .25em; } }
 
 .stockquote-symbol {
   grid-area: sym;
@@ -134,6 +135,7 @@ h5 {
   font-size: .9em; }
 
 .stockquote-sparkline {
+  background-color: orange;
   grid-area: spa;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -144,7 +146,9 @@ h5 {
   flex-direction: column;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center; }
+  justify-content: center;
+  width: 100%;
+  height: 100%; }
 
 .stockquote-price {
   grid-area: pri;
@@ -184,6 +188,21 @@ h5 {
 
 .stockquote-change--red {
   background-color: #FF3B24; }
+
+.sparkline {
+  background-color: #333333; }
+
+.sparkline-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
 
 .content {
   grid-area: c;

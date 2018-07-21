@@ -15,8 +15,8 @@ const getStockQuote = async (stock) => {
     return {
       title: companyName,
       data: {
-        price: latestPrice,
-        change: change,
+        price: latestPrice.toFixed(2),
+        change: change.toFixed(2),
         symbol
       }
     }  
@@ -25,14 +25,20 @@ const getStockQuote = async (stock) => {
   }
 }
 
-const getOneDayHistory = async (stock) => {
+const getPriceHistory = async (stock) => {
   try {
-    const oneDayHistory = await iex.stockChart(stock, 'dynamic');
-    const pricesByMinute = oneDayHistory.data.map(el => {
-      return { time: el.minute, price: el.average };
-    })
+    const prices = await iex.stockChart(stock, 'dynamic');
+    //iex returns different data depnding on whether market is open
+    const priceHistory = (prices.range === '1m') ?
+      prices.data.map(el => {
+        return { time: el.date, price: el.close }
+      })
+      :
+      utils.adjustMissingPrices(prices.data.map(el => {
+        return { time: el.minute, price: el.average };
+      }));
 
-    return utils.adjustMissingPrices(pricesByMinute);
+    return priceHistory;
   } catch (error) {
     console.error(error);
   }
@@ -42,9 +48,8 @@ const getInitPortfolio = async (portfolio = initPortfolio) => {
   try {
     const summaryData = await promise.map(portfolio, async (stock) => {
       const data = await getStockQuote(stock);
-      data.oneDayHistory = await getOneDayHistory(stock);
+      data.priceHistory = await getPriceHistory(stock);
 
-      console.log('data history is: ', data.history);
       return data;
     });
     
@@ -56,5 +61,5 @@ const getInitPortfolio = async (portfolio = initPortfolio) => {
 
 module.exports = {
   getInitPortfolio,
-  getOneDayHistory
+  getPriceHistory
 }

@@ -135,7 +135,6 @@ h5 {
   font-size: .9em; }
 
 .stockquote-sparkline {
-  background-color: orange;
   grid-area: spa;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -191,6 +190,12 @@ h5 {
 
 .sparkline {
   background-color: #333333; }
+
+.sparkline-path--green {
+  stroke: #45DC5F; }
+
+.sparkline-path--red {
+  stroke: #FF3B24; }
 
 .sparkline-wrapper {
   display: -webkit-box;

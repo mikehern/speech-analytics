@@ -4,19 +4,23 @@ import Sparkline from './Sparkline';
 const StockQuote = (props) => {
   const { name, data, history } = props;
   const { symbol, price, change } = data;
+
+  const priceDidIncrease = (change > 0);
   return (
     <div className="stockquote-wrapper">
       <div className="stockquote-symbol">{symbol}</div>
       <div className="stockquote-name">{name}</div>
       <div className="stockquote-sparkline">
-        <Sparkline history={history} />
+        <Sparkline history={history}
+          priceDidIncrease={priceDidIncrease}
+        />
       </div>
       <div className="stockquote-price">{price}</div>
       <div className="stockquote-change--wrapper">
         <div className=
           {"stockquote-change " +
-              ((change < 0) ? "stockquote-change--red"
-              : "stockquote-change--green")
+              (priceDidIncrease ? "stockquote-change--green"
+              : "stockquote-change--red")
           }>
           {change}
         </div>

@@ -144,12 +144,20 @@ h5 {
   background-color: $silver;
 }
 
+.sparkline-path {
+  fill: none;
+}
+
 .sparkline-path--green {
   stroke: $green;
 }
 
 .sparkline-path--red {
   stroke: $red;
+}
+
+.sparkline-area {
+  fill: white;
 }
 
 .sparkline-wrapper {

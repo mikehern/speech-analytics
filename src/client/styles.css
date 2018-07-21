@@ -191,11 +191,17 @@ h5 {
 .sparkline {
   background-color: #333333; }
 
+.sparkline-path {
+  fill: none; }
+
 .sparkline-path--green {
   stroke: #45DC5F; }
 
 .sparkline-path--red {
   stroke: #FF3B24; }
+
+.sparkline-area {
+  fill: white; }
 
 .sparkline-wrapper {
   display: -webkit-box;

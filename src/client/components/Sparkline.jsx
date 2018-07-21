@@ -7,26 +7,34 @@ import { area } from '../../../node_modules/d3-shape';
 
 
 class Sparkline extends Component {
-  
-  _drawLine() {
-    const { history, containerHeight, containerWidth, priceDidIncrease } = this.props;
+
+  _createScales() {
+    const { history, containerHeight, containerWidth } = this.props;
 
     const data = history.map(el => {
       el.time = new Date(el.time);
       return el;
     })
 
-    let xScale = scaleTime()
+    const x = scaleTime()
       .domain(extent(data, d => d.time))
       .range([0, containerWidth]);
-    
-    let yScale = scaleLinear()
+
+    const y = scaleLinear()
       .domain(extent(data, d => d.price))
       .range([containerHeight, 0]);
+
+    return { x, y };
+  }
+  
+  _drawLine() {
+    const { history, priceDidIncrease } = this.props;
+
+    const scale = this._createScales();
     
-    let lineChart = d3.line()
-      .x(d => xScale(d.time))
-      .y(d => yScale(d.price));
+    const lineChart = d3.line()
+      .x(d => scale.x(d.time))
+      .y(d => scale.y(d.price));
     
     return (
       <path className=
@@ -39,25 +47,14 @@ class Sparkline extends Component {
   }
 
   _drawArea() {
-    const { history, containerHeight, containerWidth, priceDidIncrease } = this.props;
+    const { history, containerHeight, priceDidIncrease } = this.props;
 
-    const data = history.map(el => {
-      el.time = new Date(el.time);
-      return el;
-    })
-    
-    let xScale = scaleTime()
-      .domain(extent(data, d => d.time))
-      .range([0, containerWidth]);
+    const scale = this._createScales();
 
-    let yScale = scaleLinear()
-      .domain(extent(data, d => d.price))
-      .range([containerHeight, 0]);
-
-    let areaChart = area()
-      .x(d => xScale(d.time))
+    const areaChart = area()
+      .x(d => scale.x(d.time))
       .y0(containerHeight)
-      .y1(d => yScale(d.price));
+      .y1(d => scale.y(d.price));
 
     return( 
       <path className={"sparkline-area--" + ((priceDidIncrease) ? "green" : "red")}

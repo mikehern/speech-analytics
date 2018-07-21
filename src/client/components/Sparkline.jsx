@@ -9,9 +9,7 @@ import { area } from '../../../node_modules/d3-shape';
 class Sparkline extends Component {
   
   _drawLine() {
-    const {
-      history, containerHeight, containerWidth, priceDidIncrease
-    } = this.props;
+    const { history, containerHeight, containerWidth, priceDidIncrease } = this.props;
 
     const data = history.map(el => {
       el.time = new Date(el.time);
@@ -41,9 +39,7 @@ class Sparkline extends Component {
   }
 
   _drawArea() {
-    const {
-      history, containerHeight, containerWidth, priceDidIncrease
-    } = this.props;
+    const { history, containerHeight, containerWidth, priceDidIncrease } = this.props;
 
     const data = history.map(el => {
       el.time = new Date(el.time);
@@ -63,21 +59,34 @@ class Sparkline extends Component {
       .y0(containerHeight)
       .y1(d => yScale(d.price));
 
-    return(
-      <path className="sparkline-area"
+    return( 
+      <path className={"sparkline-area--" + ((priceDidIncrease) ? "green" : "red")}
         d={areaChart(history)}
-      ></path>
+      />
     )
   }
   
   render() {
+    const { priceDidIncrease, containerHeight, containerWidth } = this.props;
+
+    const greenGradient = 'rgba(64,219,94,0.10)';
+    const redGradient = 'rgba(235,0,46,0.10)';
+    const areaColor = (priceDidIncrease) ? greenGradient : redGradient;
+
     return(
       <svg className="sparkline"
-        width={this.props.containerWidth}
-        height={this.props.containerHeight}
+        width={containerWidth}
+        height={containerHeight}
       >
-        {this._drawLine()}
-        {this._drawArea()}
+        <linearGradient id={"sparkline-area--" + (priceDidIncrease ? "green" : "red")}
+          gradientUnits="userSpaceOnUse"
+          x1="0" x2="0" y1="0" y2="40"
+        >
+          <stop offset="0%" stopColor={areaColor}></stop>
+          <stop offset="100%" stopColor="black"></stop>
+        </linearGradient>
+          {this._drawLine()}
+          {this._drawArea()}
       </svg>
     )
   }

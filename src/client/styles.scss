@@ -141,7 +141,7 @@ h5 {
 }
 
 .sparkline {
-  background-color: $silver;
+  background-color: black;
 }
 
 .sparkline-path {
@@ -156,8 +156,13 @@ h5 {
   stroke: $red;
 }
 
-.sparkline-area {
-  fill: white;
+//Note: id, not class required for gradient url fill
+.sparkline-area--green {
+  fill: url(#sparkline-area--green);
+}
+
+.sparkline-area--red {
+  fill: url(#sparkline-area--red);
 }
 
 .sparkline-wrapper {

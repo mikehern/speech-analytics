@@ -7,9 +7,13 @@
 - [x] Create default portfolio incl. indices
 - [x] Create mobile-first responsive design
 - [ ] Create time-series detail view of prices
-- [ ] Customize time-series range to [1d, 1w, 1m, 1q, 1y, all]
-- [ ] Create sparkline for each investment in portfolio
+- [x] Customize time-series range to [1d, 1w, 1m, 1q, 1y, all]
+- [x] Create sparkline for each investment in portfolio
 # Nice-to-have
 - [ ] Allow overlay of portfolio
 - [ ] Fetch sector data from Alphavantage
 - [ ] Create donut/pie chart from sector data
+- [ ] Fetch news for a given stock
+- [ ] Fetch key stats
+- [ ] Peers
+- [ ] Largest trades

@@ -59,7 +59,23 @@ const getInitPortfolio = async (portfolio = initPortfolio) => {
   }
 }
 
+const getStockTimeSeries = async (stockSymbol, range = 'dynamic') => {
+  try {
+    const dataOverTime = await iex.stockChart(stockSymbol, range);
+
+    return dataOverTime.map(el => {
+      const { date, open, high, low, close, volume } = el;
+      return {
+        date, open, high, low, close, volume
+      }
+    });
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 module.exports = {
   getInitPortfolio,
-  getPriceHistory
+  getPriceHistory,
+  getStockTimeSeries
 }

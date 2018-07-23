@@ -15,6 +15,12 @@ app.get('/api/getportfolio', async (req, res) => {
   res.send({ portfolio: results });
 });
 
+app.get('/api/getstocktimeseries/:symbol/:range', async(req, res) => {
+  const { symbol, range } = req.params;
+  const results = await stocks.getStockTimeSeries(symbol, range);
+  res.send({ stock: results });
+})
+
 
 const PORT = 3000;
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));

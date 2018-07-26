@@ -28,6 +28,7 @@ const getStockQuote = async (stock) => {
 const getPriceHistory = async (stock) => {
   try {
     const prices = await iex.stockChart(stock, 'dynamic');
+
     //iex returns different data depnding on whether market is open
     const priceHistory = (prices.range === '1m') ?
       prices.data.map(el => {
@@ -35,7 +36,8 @@ const getPriceHistory = async (stock) => {
       })
       :
       utils.adjustMissingPrices(prices.data.map(el => {
-        return { time: el.minute, price: el.average };
+        const timeAndDate = utils.formatTimeAndDate(el.minute, el.date);
+        return { time: timeAndDate, price: el.average };
       }));
 
     return priceHistory;

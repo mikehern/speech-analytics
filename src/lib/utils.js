@@ -39,8 +39,15 @@ const isDuringTradingHours = () => {
   return (isTradingDay() && isTradingHours());
 }
 
+const formatTimeAndDate = (time, date) => {
+  const dateAndTime = `${date} ${time}`;
+  return moment(dateAndTime, 'YYYYMMDD hh:mm')
+    .format('YYYY-MM-DD hh:mm');
+}
+
 
 module.exports = {
   adjustMissingPrices,
-  isDuringTradingHours
+  isDuringTradingHours,
+  formatTimeAndDate
 }

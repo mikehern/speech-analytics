@@ -54,11 +54,14 @@ h5 {
     height: 9vh;
     padding: .02em $phoneSidePadding;
   }
+
+  &-title {
+    &--color {
+      color: $white;
+    }
+  }
 }
 
-.header-title--color {
-  color: white;
-}
 
 .sidebar {
   grid-area: s;
@@ -71,104 +74,109 @@ h5 {
   }
 }
 
-.stockquote-wrapper {
-  display: grid;
-  padding: .75em $desktopSidePadding;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: .5em 1em;
-  border-bottom: 1px solid $silver;
-  grid-template-areas: 
-    "sym sym spa pri"
-    "nam nam spa cha";
-
-  @include phone {
-    padding: .75em $phoneSidePadding;
-    gap: .5em .25em;
+.stockquote {
+  &-wrapper {
+    display: grid;
+    padding: .75em $desktopSidePadding;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: .5em 1em;
+    border-bottom: 1px solid $silver;
+    grid-template-areas: 
+      "sym sym spa pri"
+      "nam nam spa cha";
+  
+    @include phone {
+      padding: .75em $phoneSidePadding;
+      gap: .5em .25em;
+    }
   }
-}
 
-.stockquote-symbol {
-  grid-area: sym;
-  color: white;
-}
+  &-symbol {
+    grid-area: sym;
+    color: $white;
+  }
 
-.stockquote-name {
-  grid-area: nam;
-  color: $gray;
-  font-size: .9em;
-}
+  &-name {
+    grid-area: nam;
+    color: $gray;
+    font-size: .9em;
+  }
 
-.stockquote-sparkline {
-  grid-area: spa;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-}
+  &-sparkline {
+    grid-area: spa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
 
-.stockquote-price {
-  grid-area: pri;
-  color: white;
-  display: flex;
-  justify-content: flex-end;
-}
+  &-price {
+    grid-area: pri;
+    color: $white;
+    display: flex;
+    justify-content: flex-end;
+  }
 
-.stockquote-change--wrapper {
-  grid-area: cha;
-  display: flex;
-  justify-content: flex-end;
-}
+  &-change {
+    grid-area: cha;
+    max-width: 6em;
+    color: $white;
+    border-radius: .25em;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: .25em;
+    width: 3.5em;
 
-.stockquote-change {
-  grid-area: cha;
-  max-width: 6em;
-  color: white;
-  border-radius: .25em;
-  display: flex;
-  justify-content: flex-end;
-  padding-right: .25em;
-  width: 3.5em;
-}
+    &--wrapper {
+      grid-area: cha;
+      display: flex;
+      justify-content: flex-end;
+    }
 
-.stockquote-change--green {
-  background-color: $green;
-}
+    &--green {
+      background-color: $green;
+    }
 
-.stockquote-change--red {
-  background-color: $red;
+    &--red {
+      background-color: $red;
+    }
+  }
 }
 
 .sparkline {
   background-color: black;
-}
 
-.sparkline-path {
-  fill: none;
-}
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-.sparkline-path--green {
-  stroke: $green;
-}
+  &-path {
+    fill: none;
 
-.sparkline-path--red {
-  stroke: $red;
-}
+    &--green {
+      stroke: $green;
+    }
 
-//Note: id, not class required for gradient url fill
-.sparkline-area--green {
-  fill: url(#sparkline-area--green);
-}
+    &--red {
+      stroke: $red;
+    }
+  }
 
-.sparkline-area--red {
-  fill: url(#sparkline-area--red);
-}
+  &-area {
 
-.sparkline-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    //Note: id, not class required for gradient url fill
+    &--green {
+      fill: url(#sparkline-area--green);
+    }
+
+    &--red {
+      fill: url(#sparkline-area--red);
+    }
+  }
 }
 
 .content {

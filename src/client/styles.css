@@ -99,9 +99,8 @@ h5 {
     .header {
       height: 9vh;
       padding: 0.02em 0.75em; } }
-
-.header-title--color {
-  color: white; }
+  .header-title--color {
+    color: #fff; }
 
 .sidebar {
   grid-area: s;
@@ -127,7 +126,7 @@ h5 {
 
 .stockquote-symbol {
   grid-area: sym;
-  color: white; }
+  color: #fff; }
 
 .stockquote-name {
   grid-area: nam;
@@ -151,16 +150,7 @@ h5 {
 
 .stockquote-price {
   grid-area: pri;
-  color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end; }
-
-.stockquote-change--wrapper {
-  grid-area: cha;
+  color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -171,7 +161,7 @@ h5 {
 .stockquote-change {
   grid-area: cha;
   max-width: 6em;
-  color: white;
+  color: #fff;
   border-radius: .25em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -181,42 +171,42 @@ h5 {
   justify-content: flex-end;
   padding-right: .25em;
   width: 3.5em; }
-
-.stockquote-change--green {
-  background-color: #45DC5F; }
-
-.stockquote-change--red {
-  background-color: #FF3B24; }
+  .stockquote-change--wrapper {
+    grid-area: cha;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end; }
+  .stockquote-change--green {
+    background-color: #45DC5F; }
+  .stockquote-change--red {
+    background-color: #FF3B24; }
 
 .sparkline {
   background-color: black; }
-
-.sparkline-path {
-  fill: none; }
-
-.sparkline-path--green {
-  stroke: #45DC5F; }
-
-.sparkline-path--red {
-  stroke: #FF3B24; }
-
-.sparkline-area--green {
-  fill: url(#sparkline-area--green); }
-
-.sparkline-area--red {
-  fill: url(#sparkline-area--red); }
-
-.sparkline-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center; }
+  .sparkline-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  .sparkline-path {
+    fill: none; }
+    .sparkline-path--green {
+      stroke: #45DC5F; }
+    .sparkline-path--red {
+      stroke: #FF3B24; }
+  .sparkline-area--green {
+    fill: url(#sparkline-area--green); }
+  .sparkline-area--red {
+    fill: url(#sparkline-area--red); }
 
 .content {
   grid-area: c;

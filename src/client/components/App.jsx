@@ -13,11 +13,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('/api/getusername')
-      .then(res => res.json())
-      .then(user => this.setState({ username: user.username }));
-
-    fetch('/api/getportfolio')
+    fetch('/api/portfolio')
       .then(res => res.json())
       .then(data => this.setState({ stocks: data.portfolio }));
   }

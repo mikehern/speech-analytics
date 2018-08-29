@@ -61,7 +61,7 @@ const getInitPortfolio = async (portfolio = initPortfolio) => {
   }
 }
 
-const getStockTimeSeries = async (stockSymbol, range = 'dynamic') => {
+const getStockTimeSeries = async (stockSymbol, range) => {
   try {
     const dataOverTime = await iex.stockChart(stockSymbol, range);
 

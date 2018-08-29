@@ -23,6 +23,5 @@ const formatTimeAndDate = (time, date) => {
 
 module.exports = {
   adjustMissingPrices,
-  isDuringTradingHours,
   formatTimeAndDate
 }

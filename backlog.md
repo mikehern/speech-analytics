@@ -17,3 +17,5 @@
 - [ ] Fetch key stats
 - [ ] Peers
 - [ ] Largest trades
+- [ ] Create electron-based app, always accessible from OS tray
+- [ ] GraphQL for data retrieval

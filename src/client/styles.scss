@@ -189,6 +189,22 @@ h5 {
   }
 }
 
+.stockdetail {
+  &-wrapper {
+    padding: $desktopSidePadding;
+    background-color: $slate;
+  }
+  &-timeseries {
+    background-color: $silver;
+  }
+  &-price {
+    background-color: $slate;
+  }
+  &-volume {
+    background-color: $slate;
+  }
+}
+
 footer {
   bottom: 0;
   position: fixed;

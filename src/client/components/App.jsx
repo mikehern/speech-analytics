@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import StockQuote from './StockQuote';
+import StockDetail from './StockDetail/StockDetail';
 import '../styles.css';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: null,
-      stocks: []
+      stocks: [],
+      selectedStock: ''
     };
   }
 
@@ -45,6 +46,7 @@ class App extends Component {
           </div>
           <div className="content">
             <h5>Content</h5>
+            <StockDetail />
           </div>
         </div>
         <footer>

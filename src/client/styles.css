@@ -217,6 +217,19 @@ h5 {
     .content {
       display: none; } }
 
+.stockdetail-wrapper {
+  padding: 2em;
+  background-color: #111111; }
+
+.stockdetail-timeseries {
+  background-color: #333333; }
+
+.stockdetail-price {
+  background-color: #111111; }
+
+.stockdetail-volume {
+  background-color: #111111; }
+
 footer {
   bottom: 0;
   position: fixed;

@@ -179,6 +179,33 @@ h5 {
   }
 }
 
+.tabbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  color: $white;
+  
+  &-tab {
+    &--active {
+      @include flexCenter;
+      background-color: $gray;
+      width: 3em;
+      height: 2em;
+      border-radius: .5em;
+      cursor: pointer;
+
+    }
+    &--inactive {
+      @include flexCenter;
+      width: 3em;
+      height: 2em;
+      border-radius: .5em;
+      cursor: pointer;
+    }
+  }
+}
+
 .content {
   grid-area: c;
   background-color: black;
@@ -195,7 +222,7 @@ h5 {
     background-color: $slate;
   }
   &-timeseries {
-    background-color: $silver;
+    background-color: $slate;
   }
   &-price {
     background-color: $slate;

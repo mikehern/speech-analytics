@@ -208,6 +208,48 @@ h5 {
   .sparkline-area--red {
     fill: url(#sparkline-area--red); }
 
+.tabbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: 700;
+  color: #fff; }
+  .tabbar-tab--active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #8E8B93;
+    width: 3em;
+    height: 2em;
+    border-radius: .5em;
+    cursor: pointer; }
+  .tabbar-tab--inactive {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 3em;
+    height: 2em;
+    border-radius: .5em;
+    cursor: pointer; }
+
 .content {
   grid-area: c;
   background-color: black;
@@ -222,7 +264,7 @@ h5 {
   background-color: #111111; }
 
 .stockdetail-timeseries {
-  background-color: #333333; }
+  background-color: #111111; }
 
 .stockdetail-price {
   background-color: #111111; }

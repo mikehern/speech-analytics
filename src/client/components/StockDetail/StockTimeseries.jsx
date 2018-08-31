@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PriceTimeseries from './PriceTimeseries';
 import VolumeTimeseries from './VolumeTimeseries';
-import Tabs from './Tabs';
+import TabBar from './TabBar';
 
 class StockTimeseries extends Component {
   constructor(props) {
@@ -14,8 +14,7 @@ class StockTimeseries extends Component {
   render() {
     return(
       <div className="stockdetail-timeseries">
-        <Tabs render="">
-        </Tabs>
+        <TabBar />
         <PriceTimeseries />
         <VolumeTimeseries />
       </div>

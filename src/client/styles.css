@@ -43,7 +43,7 @@ body {
   font-family: "Poppins", sans-serif; }
 
 h5 {
-  color: #bababa; }
+  color: rgba(186, 186, 186, 0.925); }
 
 .container {
   display: grid;
@@ -260,17 +260,17 @@ h5 {
       display: none; } }
 
 .stockdetail-wrapper {
-  padding: 2em;
-  background-color: #111111; }
-
-.stockdetail-timeseries {
-  background-color: #111111; }
-
-.stockdetail-price {
-  background-color: #111111; }
+  padding: 2em; }
 
 .stockdetail-volume {
   background-color: #111111; }
+
+.pricechart-path {
+  fill: none;
+  stroke: #5F67FF; }
+
+.pricechart-area {
+  fill: url(#pricechart-area--gradient); }
 
 footer {
   bottom: 0;

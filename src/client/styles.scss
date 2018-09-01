@@ -14,7 +14,7 @@ body {
 }
 
 h5 {
-  color: rgb(186, 186, 186);
+  color: rgba(186, 186, 186, 0.925);
 }
 
 .container {
@@ -219,18 +219,29 @@ h5 {
 .stockdetail {
   &-wrapper {
     padding: $desktopSidePadding;
-    background-color: $slate;
   }
   &-timeseries {
-    background-color: $slate;
+
   }
   &-price {
-    background-color: $slate;
+
   }
   &-volume {
     background-color: $slate;
   }
 }
+
+.pricechart {
+  &-path {
+    fill: none;
+    stroke: $blue;
+  }
+  //Note: id, not class required for gradient url fill
+  &-area {
+    fill: url(#pricechart-area--gradient)
+  }
+}
+
 
 footer {
   bottom: 0;

@@ -40,11 +40,12 @@ class StockTimeseries extends Component {
   }
 
   render() {
+    const { prices, volume, interval } = this.state;
     return(
       <div className="stockdetail-timeseries">
         <TabBar />
-        <PriceTimeseries />
-        <VolumeTimeseries />
+        {(prices.length > 0) && <PriceTimeseries data={prices} />}
+        {(volume.length > 0) && <VolumeTimeseries data={volume} />}
       </div>
     )
   }

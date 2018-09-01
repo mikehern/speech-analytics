@@ -19,7 +19,7 @@ class StockDetail extends Component {
     const { tickerSymbol } = this.state;
     return(
       <div className="stockdetail-wrapper">
-        <StockTimeseries tickerSymbol={tickerSymbol}/>
+        <StockTimeseries tickerSymbol={tickerSymbol} />
       </div>
     )
   }

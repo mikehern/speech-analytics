@@ -19,13 +19,19 @@ class App extends Component {
       .then(data => this.setState({ stocks: data.portfolio }));
   }
 
+  _clickedStock(symbol) {
+    this.setState({ selectedStock: symbol });
+  }
+
   render() {
-    const quotes = this.state.stocks.map(el => {
+    const { stocks, selectedStock } = this.state;
+    const quotes = stocks.map(stock => {
       return (
-        <StockQuote key={el.title}
-          name={el.title}
-          data={el.data}
-          history={el.priceHistory}
+        <StockQuote key={stock.title}
+          name={stock.title}
+          data={stock.data}
+          history={stock.priceHistory}
+          clickedStock={(symbol) =>  this._clickedStock(symbol)}
         />
       );
     });
@@ -46,7 +52,7 @@ class App extends Component {
           </div>
           <div className="content">
             <h5>Content</h5>
-            <StockDetail />
+            <StockDetail selectedStock={selectedStock}/>
           </div>
         </div>
         <footer>

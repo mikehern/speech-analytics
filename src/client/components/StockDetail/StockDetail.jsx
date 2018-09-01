@@ -5,15 +5,21 @@ class StockDetail extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      stockData: []
+      tickerSymbol: ''
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.selectedStock !== this.props.selectedStock) {
+      this.setState({ tickerSymbol: this.props.selectedStock });
     }
   }
 
   render() {
+    const { tickerSymbol } = this.state;
     return(
       <div className="stockdetail-wrapper">
-        STOCKDETAIL
-        <StockTimeseries />
+        <StockTimeseries tickerSymbol={tickerSymbol}/>
       </div>
     )
   }

@@ -66,9 +66,11 @@ const getStockTimeSeries = async (stockSymbol, range) => {
     const dataOverTime = await iex.stockChart(stockSymbol, range);
 
     return dataOverTime.map(el => {
-      const { date, open, high, low, close, volume } = el;
+      const { minute, date, open, high, low, close, volume } = el;
+      const timeAndDate = utils.formatTimeAndDate(minute, date);
+      
       return {
-        date, open, high, low, close, volume
+        date: timeAndDate, open, high, low, close, volume
       }
     });
   } catch (error) {

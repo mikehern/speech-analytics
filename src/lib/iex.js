@@ -64,15 +64,13 @@ const getInitPortfolio = async (portfolio = initPortfolio) => {
 const getStockTimeSeries = async (stockSymbol, range) => {
   try {
     const dataOverTime = await iex.stockChart(stockSymbol, range);
+    return utils.adjustMissingPrices(dataOverTime, 'open', 'high', 'low', 'close')
+      .map(el => {
+        const { high, low, open, close, volume, minute, date } = el;
+        const timeAndDate = utils.formatTimeAndDate(minute, date);
+        return { high, low, open, close, volume, date: timeAndDate };
+      });
 
-    return dataOverTime.map(el => {
-      const { minute, date, open, high, low, close, volume } = el;
-      const timeAndDate = utils.formatTimeAndDate(minute, date);
-      
-      return {
-        date: timeAndDate, open, high, low, close, volume
-      }
-    });
   } catch (error) {
     console.error(error);
   }

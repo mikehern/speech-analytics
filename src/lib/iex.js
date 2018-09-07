@@ -69,7 +69,8 @@ const getStockTimeSeries = async (stockSymbol, range) => {
         const { high, low, open, close, volume, minute, date } = el;
         const timeAndDate = utils.formatTimeAndDate(minute, date);
         return { high, low, open, close, volume, date: timeAndDate };
-      });
+      })
+      .filter(datum => (datum.close));
 
   } catch (error) {
     console.error(error);

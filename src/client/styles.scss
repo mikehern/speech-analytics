@@ -184,12 +184,15 @@ h5 {
   justify-content: space-between;
   align-items: center;
   font-weight: 700;
-  color: $white;
+  color: $gray;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  border-color: $silver;
   
   &-tab {
     &--active {
       @include flexCenter;
-      background-color: $gray;
+      background-color: $silver;
       width: 3em;
       height: 2em;
       border-radius: .5em;
@@ -235,10 +238,11 @@ h5 {
   &-path {
     fill: none;
     stroke: $blue;
+    stroke-width: 2px;
   }
   //Note: id, not class required for gradient url fill
   &-area {
-    fill: url(#pricechart-area--gradient)
+    fill: url(#pricechart-area--gradient);
   }
   &-axis text {
     stroke: $gray;

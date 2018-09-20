@@ -219,7 +219,10 @@ h5 {
   -ms-flex-align: center;
   align-items: center;
   font-weight: 700;
-  color: #fff; }
+  color: #8E8B93;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  border-color: #333333; }
   .tabbar-tab--active {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -230,7 +233,7 @@ h5 {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    background-color: #8E8B93;
+    background-color: #333333;
     width: 3em;
     height: 2em;
     border-radius: .5em;
@@ -267,7 +270,8 @@ h5 {
 
 .pricechart-path {
   fill: none;
-  stroke: #5F67FF; }
+  stroke: #5F67FF;
+  stroke-width: 2px; }
 
 .pricechart-area {
   fill: url(#pricechart-area--gradient); }

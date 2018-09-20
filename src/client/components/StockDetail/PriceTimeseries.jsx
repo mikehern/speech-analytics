@@ -97,7 +97,7 @@ class PriceTimeseries extends Component {
         <svg className="pricechart" width={containerWidth} height={containerHeight}>
           <linearGradient id="pricechart-area--gradient"
             gradientUnits="userSpaceOnUse" x1="0" x2="0" y1="0" y2="250">
-            <stop offset="0%" stopColor="rgba(95,103,255,0.3)" />
+            <stop offset="0%" stopColor="rgba(95,103,255,0.5)" />
             <stop offset="100%" stopColor="black" />
           </linearGradient>
           {this._drawLine()}

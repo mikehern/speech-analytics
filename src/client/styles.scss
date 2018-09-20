@@ -240,6 +240,17 @@ h5 {
   &-area {
     fill: url(#pricechart-area--gradient)
   }
+  &-axis text {
+    stroke: $gray;
+    fill: $gray;
+    font-size: 1.5em;
+    stroke-width: .1px;
+  }
+
+  &-axis line {
+    fill: none;
+    stroke: none;
+  }
 }
 
 
